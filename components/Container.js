@@ -24,31 +24,25 @@ const Container = ({ children }) => {
                 flexDirection="column"
                 alignItems="center"
                 bg={bgColor[colorMode]}
-                // color={primaryTextColor[colorMode]}
+                color={primaryTextColor[colorMode]}
                 px={8}
             >
                 {children}
                 {/* <Footer /> */}
                 <Stack alignItems="center" mt={10} mb={5}>
                     <Text textAlign="center" fontSize="sm">
-                        Developed by {' '}
-                        <chakra.span fontWeight="semibold">
-                            Sai Rithwik M
-                        </chakra.span>{' '}                        
-                        <br />
                         Built with{' '}
                         <chakra.span fontWeight="semibold">
-                            Next.js
+                            <NextLink href="https://nextjs.org/">
+                                <a>Next.js</a>                                
+                            </NextLink> 
                         </chakra.span>{' '}
                         &{' '}
                         <chakra.span fontWeight="semibold">
-                            Chakra UI
+                            <NextLink href="https://chakra-ui.com/">
+                                <a>Chakra UI</a>
+                            </NextLink>
                         </chakra.span>
-                        {/* . Hosted on{' '}
-                        <chakra.span fontWeight="semibold">
-                            Vercel
-                        </chakra.span> */}
-                        .
                     </Text>
                 </Stack>
             </Flex>

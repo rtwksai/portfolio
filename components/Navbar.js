@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
-import { SunIcon, MoonIcon } from '@chakra-ui/icons';
+import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { navBgColor } from '../styles/darkMode';
 import { useMediaQuery } from 'react-responsive';
 
@@ -84,13 +84,13 @@ const Navbar = () => {
                 <Box>{LINKS.map(getLink)}</Box>
             ) : (
                 <IconButton
-                    aria-label="toggle dark mode"
-                    icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+                    aria-label="toggle ham"
+                    icon={<HamburgerIcon />}
                     onClick={onOpen}
                 />
             )}
 
-            <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
+            <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
                 <DrawerOverlay>
                     <DrawerContent>
                         <DrawerCloseButton />

@@ -1,7 +1,7 @@
 import { ChakraProvider, ColorModeProvider, useColorMode } from '@chakra-ui/react'
 import customTheme from '../styles/theme'
 import { Global, css } from '@emotion/react'
-import { primaryTextColor, bgColor } from '../styles/darkMode';
+import { bgColor } from '../styles/darkMode';
 
 
 const GlobalStyle = ({children}) => {
@@ -27,7 +27,7 @@ const GlobalStyle = ({children}) => {
 					display: flex;
 					flex-direction: column;
 					min-height: 100vh;
-					background: ${colorMode === 'light' ? 'white' : '#171923'};
+					background: ${bgColor[colorMode]};
 				}
 			`}
 		/>
