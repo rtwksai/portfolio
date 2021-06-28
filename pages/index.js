@@ -1,6 +1,7 @@
-import { Container } from '@chakra-ui/layout'
 import Head from 'next/head'
 import Image from 'next/image'
+
+import Container from '../components/Container'
 
 export default function Home() {
 	return (
@@ -24,7 +25,7 @@ export default function Home() {
                     property="og:description"
                     content="Developer and an undergraduate IIIT Bangalore, India."
                 />
-                <meta property="og:image" content="https://i.imgur.com/AOMvmeJ.png" />
+                {/* <meta property="og:image" content="https://i.imgur.com/AOMvmeJ.png" /> */}
             </Head>
 
 
