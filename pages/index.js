@@ -13,6 +13,7 @@ import {
         Divider
     } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import { FaRegFileAlt } from 'react-icons/fa'
 import { NextSeo } from 'next-seo'
 import { linkColor } from '../styles/darkMode'
 import Container from '../components/Container'
@@ -48,7 +49,7 @@ export default function Home() {
                     <Skeleton isLoaded={imageLoad} boxSize='250px' borderRadius='2xl' m='auto'>
                         <Image
                             borderRadius='2xl'
-                            boxSize='250px'
+                            boxSize='260px'
                             src='pp.jpeg'
                             objectFit='cover'
                             alt='Rithwik'
@@ -62,7 +63,7 @@ export default function Home() {
                         my={{ base: 10, lg: 0 }}
                     >
                         <Heading
-                            className='moving-grad'
+                            className='mov-heading'
                             fontSize={{ base: `5xl`, lg: `7xl` }}
                             textAlign={{ base: `center`, lg: `left` }}
                         >
@@ -93,6 +94,15 @@ export default function Home() {
                             </ChakraLink>{' '}
                             or any social media.
                         </chakra.p>
+                        <Flex justify={["center", "center", "left"]} width="100%">
+                            <NextLink href="/files/resume.pdf" passHref>
+                                <ChakraLink _hover="none" mt={8}>
+                                <Button leftIcon={<FaRegFileAlt />} colorScheme="gray" variant="outline" aria-label="view all projects">
+                                    My Resume
+                                </Button>
+                                </ChakraLink>
+                            </NextLink>
+                        </Flex>
                     </Flex>
                 </Flex>
                 
