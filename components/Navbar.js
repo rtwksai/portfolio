@@ -76,6 +76,7 @@ const Navbar = () => {
         >
             {isBigScreen && (
                 <IconButton
+                    borderRadius='10px'
                     aria-label="toggle dark mode"
                     icon={colorMode == 'dark' ? <SunIcon /> : <MoonIcon />}
                     onClick={toggleColorMode}
@@ -86,6 +87,7 @@ const Navbar = () => {
                     <Box>{LINKS.map(getLink)}</Box> 
                 ) : (
                     <IconButton
+                        borderRadius='10px'
                         aria-label="toggle ham"
                         icon={<HamburgerIcon />}
                         onClick={onOpen}
@@ -104,6 +106,7 @@ const Navbar = () => {
                                 alignItems="center"
                             >
                                 <IconButton
+                                    borderRadius='10px'
                                     boxSize="50px"
                                     mb="6"
                                     aria-label="toggle dark mode"

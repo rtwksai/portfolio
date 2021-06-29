@@ -1,13 +1,7 @@
-import React, { useEffect } from 'react'
-import NextLink from 'next/link'
+import React from 'react'
 import {
-        chakra,
-        Stack,
-        Text,
         useColorMode,
-        Button,
-        Flex,
-        Box
+        Flex
 } from '@chakra-ui/react'
 import { primaryTextColor, bgColor } from '../styles/darkMode';
 import Navbar from './Navbar';
