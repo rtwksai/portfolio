@@ -17,6 +17,7 @@ import NextLink from 'next/link';
 import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { navBgColor } from '../styles/darkMode';
 import { useMediaQuery } from 'react-responsive';
+import React from 'react';
 
 const LINKS = [
         {
@@ -39,7 +40,7 @@ const LINKS = [
 
 const NavContainer = styled(Flex)`
     position: sticky;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     backdrop-filter: saturate(180%) blur(20px);
     transition: background-color 0.1 ease-in-out;
@@ -60,10 +61,11 @@ const Navbar = () => {
     );
     return (
         <NavContainer
+            borderRadius='2xl'
             flexDirection="row"
             justifyContent="space-between"
             alignItems="center"
-            maxWidth="900px"
+            maxWidth="1000px"
             width="100%"
             bg={bg}
             as="nav"
@@ -75,20 +77,20 @@ const Navbar = () => {
             {isBigScreen && (
                 <IconButton
                     aria-label="toggle dark mode"
-                    icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+                    icon={colorMode == 'dark' ? <SunIcon /> : <MoonIcon />}
                     onClick={toggleColorMode}
                 />
             )}
 
             {isBigScreen ? (
-                <Box>{LINKS.map(getLink)}</Box>
-            ) : (
-                <IconButton
-                    aria-label="toggle ham"
-                    icon={<HamburgerIcon />}
-                    onClick={onOpen}
-                />
-            )}
+                    <Box>{LINKS.map(getLink)}</Box> 
+                ) : (
+                    <IconButton
+                        aria-label="toggle ham"
+                        icon={<HamburgerIcon />}
+                        onClick={onOpen}
+                    />                    
+                )}
 
             <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
                 <DrawerOverlay>

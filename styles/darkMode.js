@@ -30,3 +30,8 @@ export const iconColor = {
         light: 'gray.1000',
         dark: 'white'
 };
+
+export const linkColor = {
+        light: 'blue.800',
+        dark: 'blue.400'
+};

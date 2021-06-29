@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { primaryTextColor, bgColor } from '../styles/darkMode';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Container = ({ children }) => {
     const { colorMode } = useColorMode();
@@ -28,24 +29,8 @@ const Container = ({ children }) => {
                 px={8}
             >
                 {children}
-                {/* <Footer /> */}
-                <Stack alignItems="center" mt={10} mb={5}>
-                    <Text textAlign="center" fontSize="sm">
-                        Built with{' '}
-                        <chakra.span fontWeight="semibold">
-                            <NextLink href="https://nextjs.org/">
-                                <a>Next.js</a>                                
-                            </NextLink> 
-                        </chakra.span>{' '}
-                        &{' '}
-                        <chakra.span fontWeight="semibold">
-                            <NextLink href="https://chakra-ui.com/">
-                                <a>Chakra UI</a>
-                            </NextLink>
-                        </chakra.span>
-                    </Text>
-                </Stack>
             </Flex>
+            <Footer />
         </>
     );
 };
