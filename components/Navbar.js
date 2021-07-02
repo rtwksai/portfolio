@@ -18,6 +18,7 @@ import { SunIcon, MoonIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { navBgColor } from '../styles/darkMode';
 import { useMediaQuery } from 'react-responsive';
 import React from 'react';
+// import useSound from "use-sound";
 
 const LINKS = [
         {
@@ -48,6 +49,13 @@ const NavContainer = styled(Flex)`
 
 const Navbar = () => {
     const { colorMode, toggleColorMode } = useColorMode();
+    // const [play] = useSound("/files/lightswitch.mp3", {
+    //     volume: 0.05,
+    //     sprite: {
+    //         on: [0, 300],
+    //         off: [500, 300],
+    //     },
+    // });
     const bg = useColorModeValue(navBgColor.light, navBgColor.dark);
     const isBigScreen = useMediaQuery({ minWidth: 600 });
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -59,6 +67,7 @@ const Navbar = () => {
             </Button>
         </NextLink>
     );
+
     return (
         <NavContainer
             borderRadius='2xl'
@@ -73,12 +82,13 @@ const Navbar = () => {
             mt={[0, 8]}
             mb={8}
             mx="auto"
-        >
+            >
+
             {isBigScreen && (
                 <IconButton
                     borderRadius='10px'
                     aria-label="toggle dark mode"
-                    icon={colorMode == 'dark' ? <SunIcon /> : <MoonIcon />}
+                    icon={colorMode === "dark" ? <SunIcon /> : <MoonIcon />}
                     onClick={toggleColorMode}
                 />
             )}

@@ -2,7 +2,7 @@ import { ChakraProvider, ColorModeProvider, useColorMode } from '@chakra-ui/reac
 import customTheme from '../styles/theme'
 import { Global, css } from '@emotion/react'
 import { bgColor } from '../styles/darkMode';
-
+import { prismLightTheme, prismDarkTheme } from '../styles/prism'
 
 const GlobalStyle = ({children}) => {
 
@@ -11,6 +11,7 @@ const GlobalStyle = ({children}) => {
 		<>
 		<Global
 			styles={css`
+				${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
 				::selection {
 					background-color: #90CDF4;
 					color: #fefefe;

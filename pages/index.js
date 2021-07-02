@@ -67,7 +67,7 @@ export default function Home() {
                             fontSize={{ base: `5xl`, lg: `7xl` }}
                             textAlign={{ base: `center`, lg: `left` }}
                         >
-                            Hey, I'm Rithwik!
+                            Hey, I&apos;m Rithwik!
                         </Heading>
                         <chakra.p
                             maxW='650px'
@@ -75,11 +75,11 @@ export default function Home() {
                             fontSize='l'
                             mt={2}
                         >
-                            I'm a Computer Science undergraduate at {' '}
-                            <ChakraLink href="https://www.iiitb.ac.in" color={linkColor[colorMode]}>IIIT Bangalore
+                            I&apos;m a Computer Science undergraduate at {' '}
+                            <ChakraLink href="https://www.iiitb.ac.in" target="_blank" color={linkColor[colorMode]}>IIIT Bangalore
                             </ChakraLink>
                             , India. I am passionate 
-                            about tech specifically in the fields of Distributed Computing, Blockchain, Forensics and Reverse Engineering.
+                            about tech; specifically in the fields of Distributed Computing, Blockchain, Forensics and Reverse Engineering.
                             My personal website is where I share my {' '}
                             <ChakraLink href="/projects" color={linkColor[colorMode]}>
                                 projects
@@ -94,14 +94,15 @@ export default function Home() {
                             </ChakraLink>{' '}
                             or any social media.
                         </chakra.p>
+                        <br/>
                         <Flex justify={["center", "center", "left"]} width="100%">
-                            <NextLink href="/files/resume.pdf" passHref>
+                            <a href="/files/resume.pdf" target="_blank">
                                 <ChakraLink _hover="none" mt={8}>
                                 <Button leftIcon={<FaRegFileAlt />} colorScheme="gray" variant="outline" aria-label="view all projects">
                                     My Resume
                                 </Button>
                                 </ChakraLink>
-                            </NextLink>
+                            </a>
                         </Flex>
                     </Flex>
                 </Flex>
@@ -110,14 +111,14 @@ export default function Home() {
                 <Flex
                     flexDirection="column"
                     justifyContent="flex-start"
-                    alignItems="flex-start"
+                    alignItems={["center", "center", "flex-start"]}
                     maxWidth="700px"
                 >
                     <Divider mb={12} mt={16} w='100%' alignSelf="center" />
 
                     <Heading 
                         letterSpacing="tight" 
-                        size="lg" 
+                        size="lg"
                         fontWeight={700} 
                     >
                         Featured Projects
