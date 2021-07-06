@@ -85,7 +85,7 @@ export default function Home() {
                          <ChakraLink href="https://open.spotify.com/artist/0Y5tJX1MQlPlqiwlOH1tJY?si=m8PKnFuMSbSJ0inpxs9SNA&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Travis Scott</ChakraLink>, {' '}
                          <ChakraLink href="https://open.spotify.com/artist/1yCVvGnMTuLeNzbXtgAytL?si=yy1ULJHmTXGZZQ0dzIwiGg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Rebel-7</ChakraLink>, {' '}
                           <ChakraLink href="https://open.spotify.com/artist/0EAfS9gQe5SCtQp1R6hJqG?si=eoh7oRjKQBuyxbD9Ck6LIg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Ahmer</ChakraLink> and {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/6JvFJaw7uRQFBUzSlv28Gw?si=udOeinvpSWqE5bhMwCUWgQ&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Tienas'</ChakraLink> work. 
+                         <ChakraLink href="https://open.spotify.com/artist/6JvFJaw7uRQFBUzSlv28Gw?si=udOeinvpSWqE5bhMwCUWgQ&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Tienas&apos;</ChakraLink> work. 
                             Even though I am not into beat-boxing or music production, I ardently follow 
                             {' '}<ChakraLink href="https://open.spotify.com/artist/5pWWDUGa89yZyjOGqgSKWB?si=t5Ts3p0ARoCj3nX3hFqHEg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>MB-14</ChakraLink> and
                             {' '}<ChakraLink href="https://open.spotify.com/artist/7hI0IRD66iykVpXiieNRbe?si=DvthMAeLQwyWZ42htAhQMw&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Sez on the Beat</ChakraLink>! 
