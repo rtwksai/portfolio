@@ -19,6 +19,9 @@ const description = "Developer and an undergraduate IIIT Bangalore, India."
 export default function Home() {
     const [imageLoad, setImageLoad] = useState(false);
     const { colorMode } = useColorMode()
+
+    console.log(colorMode)
+    console.log(linkColor[colorMode])
 	return (
         <>
             {/* TODO add more SEO RELATED STUFF https://www.npmjs.com/package/next-seo */}
@@ -78,14 +81,14 @@ export default function Home() {
                             Interests
                         </Heading>
                         <Text color={secondaryTextColor[colorMode]}>I&apos;m a lot into lyrical and experimental hip-hop and I vibe to {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/2oBG74gAocPMFv6Ij9ykdo?si=oJaImoiLTAO5s1-ILb8uaw&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Seedhe Maut</ChakraLink>, {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/7suHsCqUEifucqVyWaljgC?si=1gPKhrJ6TKm7qvDA1vbFkA&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Prabh Deep</ChakraLink>, {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/6l3HvQ5sa6mXTsMTB19rO5?si=vbWa9R1oRQSREI-A4w80OQ&dl_branch=1" target="_blank" color={linkColor[colorMode]}>J. Cole</ChakraLink>, {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/4r63FhuTkUYltbVAg5TQnk?si=i_0CEt_8R6KaeTlcNMj75Q&dl_branch=1" target="_blank" color={linkColor[colorMode]}>DaBaby</ChakraLink>, {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/0Y5tJX1MQlPlqiwlOH1tJY?si=m8PKnFuMSbSJ0inpxs9SNA&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Travis Scott</ChakraLink>, {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/1yCVvGnMTuLeNzbXtgAytL?si=yy1ULJHmTXGZZQ0dzIwiGg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Rebel-7</ChakraLink>, {' '}
-                          <ChakraLink href="https://open.spotify.com/artist/0EAfS9gQe5SCtQp1R6hJqG?si=eoh7oRjKQBuyxbD9Ck6LIg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Ahmer</ChakraLink> and {' '}
-                         <ChakraLink href="https://open.spotify.com/artist/6JvFJaw7uRQFBUzSlv28Gw?si=udOeinvpSWqE5bhMwCUWgQ&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Tienas&apos;</ChakraLink> work. 
+                        <ChakraLink href="https://open.spotify.com/artist/2oBG74gAocPMFv6Ij9ykdo?si=oJaImoiLTAO5s1-ILb8uaw&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Seedhe Maut</ChakraLink>, {' '}
+                        <ChakraLink href="https://open.spotify.com/artist/7suHsCqUEifucqVyWaljgC?si=1gPKhrJ6TKm7qvDA1vbFkA&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Prabh Deep</ChakraLink>, {' '}
+                        <ChakraLink href="https://open.spotify.com/artist/6l3HvQ5sa6mXTsMTB19rO5?si=vbWa9R1oRQSREI-A4w80OQ&dl_branch=1" target="_blank" color={linkColor[colorMode]}>J. Cole</ChakraLink>, {' '}
+                        <ChakraLink href="https://open.spotify.com/artist/4r63FhuTkUYltbVAg5TQnk?si=i_0CEt_8R6KaeTlcNMj75Q&dl_branch=1" target="_blank" color={linkColor[colorMode]}>DaBaby</ChakraLink>, {' '}
+                        <ChakraLink href="https://open.spotify.com/artist/0Y5tJX1MQlPlqiwlOH1tJY?si=m8PKnFuMSbSJ0inpxs9SNA&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Travis Scott</ChakraLink>, {' '}
+                        <ChakraLink href="https://open.spotify.com/artist/1yCVvGnMTuLeNzbXtgAytL?si=yy1ULJHmTXGZZQ0dzIwiGg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Rebel-7</ChakraLink>, {' '}
+                        <ChakraLink href="https://open.spotify.com/artist/0EAfS9gQe5SCtQp1R6hJqG?si=eoh7oRjKQBuyxbD9Ck6LIg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Ahmer</ChakraLink> and {' '}
+                        <ChakraLink href="https://open.spotify.com/artist/6JvFJaw7uRQFBUzSlv28Gw?si=udOeinvpSWqE5bhMwCUWgQ&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Tienas&apos;</ChakraLink> work. 
                             Even though I am not into beat-boxing or music production, I ardently follow 
                             {' '}<ChakraLink href="https://open.spotify.com/artist/5pWWDUGa89yZyjOGqgSKWB?si=t5Ts3p0ARoCj3nX3hFqHEg&dl_branch=1" target="_blank" color={linkColor[colorMode]}>MB-14</ChakraLink> and
                             {' '}<ChakraLink href="https://open.spotify.com/artist/7hI0IRD66iykVpXiieNRbe?si=DvthMAeLQwyWZ42htAhQMw&dl_branch=1" target="_blank" color={linkColor[colorMode]}>Sez on the Beat</ChakraLink>! 

@@ -32,11 +32,11 @@ export const iconColor = {
 };
 
 export const linkColor = {
-        light: 'blue.800',
+        light: 'blue.600',
         dark: 'blue.400'
 };
 
 export const shadowColor = {
         light: '0px 8px 26px rgba(0, 0, 0, 0.1)',
         dark: '0px 8px 26px rgba(0, 0, 0, 0.9)'
-    }
+}
