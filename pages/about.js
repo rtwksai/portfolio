@@ -6,22 +6,52 @@ import {
         Heading,
         Stack,
         Text,
+        Box,
+        Wrap,
         Link as ChakraLink,
     } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo'
 import Container from '../components/Container'
 import {linkColor, secondaryTextColor} from '../styles/darkMode'
+import InterestTag from '../components/Interest'
 
 const url = 'https://localhost:3000/'
 const title = 'About - Rithwik'
 const description = "Developer and an undergraduate IIIT Bangalore, India."
 
-export default function Home() {
+
+const Interests = {
+    like: [
+    "Architecture",
+    "Blockchains",
+    "Crime Thrillers",
+    "Chess",
+    "Current Affairs",
+    "Hip-Hop",
+    "Open Source",
+    "Pizza",
+    "Reddit",
+    "Ricing",
+    "Societal Platforms",
+    "System Design"],    
+    
+    dislike: ["Data Science",
+    "EDM",
+    "Guesswork",
+    "Instagram",
+    "Romance(Genre)",
+    "Singing",
+    "Snapchat",
+    "Nachos",
+    "OSINT"]
+};
+
+
+
+
+export default function About() {
     const [imageLoad, setImageLoad] = useState(false);
     const { colorMode } = useColorMode()
-
-    console.log(colorMode)
-    console.log(linkColor[colorMode])
 	return (
         <>
             {/* TODO add more SEO RELATED STUFF https://www.npmjs.com/package/next-seo */}
@@ -73,7 +103,7 @@ export default function Home() {
                         </Heading>  
                         <Text color={secondaryTextColor[colorMode]}>I had got a chance to live in various places. 
                             A few of my favourite ones are Kolkata, Bengaluru and Jamshedpur! 
-                            When I&apos;m not in Bengaluru, I&apos;m in Chennai. I&apos;m a native Telugu speaker, but I can speak a few more languages like Hindi, Tamil and Bengali as I have been to many places. 
+                            When I&apos;m not in Bengaluru, I&apos;m in Chennai. I&apos;m a native Telugu speaker, but I can speak a few more languages like Hindi, Tamil and Bengali as I have lived in many places in India. 
                             I try to learn the native language of almost every place I have been to and I hope to learn some Kannada before I graduate from IIIT B.
                         </Text>
                         <br></br>
@@ -100,7 +130,7 @@ export default function Home() {
                             <Text color={secondaryTextColor[colorMode]}>
                             My relation with the arts has been pretty much complicated. 
                             For a brief period of time I had trained with keyboard and that was the period I had started using music as a stress buster.
-                            As a kid, I was very much involved in glass painting and unfortunately, most of the paintings have been disposed off due to my travel to various places. 
+                            As a kid, I was very much involved in glass painting and unfortunately, most of the paintings have been disposed off due to my relocation to various places. 
                             Hopefully, if I find them someday, it will be showcased here!!!
                             </Text>
 
@@ -108,7 +138,7 @@ export default function Home() {
                             
                             <Text color={secondaryTextColor[colorMode]}>
                             I&apos;m not that interested in sports. I have tried many of them from Archery to Swimming, but was never interested in almost any of them.
-                            However, I do play a decent amount of badminton!
+                            However, I do play a decent amount of badminton and of late I have taken some interest in chess for the last year and I&apos;m a 1200 rated rapid player on chesscom. 
                         </Text>
 
                         <br></br>
@@ -116,7 +146,20 @@ export default function Home() {
                             Share a slice of your <ChakraLink href="https://mojopizza.in/" target="_blank" color={linkColor[colorMode]}>pizza</ChakraLink> and I&apos;ll be your friend for lifetime.
                             Get in touch with me over <ChakraLink href="https://twitter.com/DaKeiser" target="_blank" color={linkColor[colorMode]}>Twitter</ChakraLink>!!!
                         </Text>
+                        <br></br><br></br>
+                        <Wrap>{
+                            Interests.like.map((likes) => (
+                            <InterestTag name={likes} like/>))
+                        }
+                        </Wrap>
+                        <br></br> <br></br>
+                        <Wrap>{
+                            Interests.dislike.map((dislikes) => (
+                            <InterestTag name={dislikes} />))
+                        }
+                        </Wrap>
                     </Flex>
+                    
                 </Stack>
             </Container>
         </>

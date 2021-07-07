@@ -10,7 +10,7 @@ const url = 'https://localhost:3000/'
 const title = 'Projects - Rithwik'
 const description = "Developer and an undergraduate IIIT Bangalore, India."
 
-export default function Home() {
+export default function Projects() {
     const [imageLoad, setImageLoad] = useState(false);
     const { colorMode } = useColorMode()
 	return (
