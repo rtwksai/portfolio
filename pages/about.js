@@ -149,15 +149,15 @@ export default function About() {
                             Get in touch with me over <ChakraLink href="https://twitter.com/DaKeiser" target="_blank" color={linkColor[colorMode]}>Twitter</ChakraLink>!!!
                         </Text>
                         <br></br><br></br>
-                        <Wrap>{
+                        <Wrap >{
                             Interests.like.map((likes) => (
-                            <InterestTag name={likes} like/>))
+                            <InterestTag key={likes} name={likes} like/>))
                         }
                         </Wrap>
                         <br></br> <br></br>
                         <Wrap>{
                             Interests.dislike.map((dislikes) => (
-                            <InterestTag name={dislikes} />))
+                            <InterestTag key={dislikes} name={dislikes} />))
                         }
                         </Wrap>
                     </Flex>
