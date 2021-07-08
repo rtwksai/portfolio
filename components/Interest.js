@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Tag, WrapItem } from "@chakra-ui/react";
+import { Tag, WrapItem } from "@chakra-ui/react";
 
 const InterestTag = ({ name, like }) => {
   return (
