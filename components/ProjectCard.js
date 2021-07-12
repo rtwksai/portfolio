@@ -10,7 +10,6 @@ import {
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { borderColor, secondaryTextColor, shadowColor } from '../styles/darkMode'
-import { FaGithub } from 'react-icons/fa'
 
 const ProjectCard = ({ title, href, children, src, alt }) => {
     const { colorMode } = useColorMode()

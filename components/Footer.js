@@ -10,6 +10,7 @@ import { FaRegEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import * as React from 'react'
 import { Text } from '@chakra-ui/layout'
 import { linkColor } from '../styles/darkMode';
+import NextLink from 'next/link'
 
 const Copyright = (props) => (
     <Text fontSize="sm" {...props}>
@@ -55,10 +56,12 @@ const Footer = () => {
                     <Text textAlign="center" fontSize="sm">
                         Built with{' '}
                         <chakra.span fontWeight="semibold" color={linkColor[colorMode]}>
+                            <NextLink href={`https://nextjs.org`} passHref> Next.js </NextLink>
                             <a href="https://nextjs.org">Next.js</a>
                         </chakra.span>{' '}
                         &{' '}
                         <chakra.span fontWeight="semibold" color={linkColor[colorMode]}>
+                            
                             <a href="https://chakra-ui.com/">Chakra UI</a>
                         </chakra.span>
                     </Text>

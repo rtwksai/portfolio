@@ -22,20 +22,20 @@ import React from 'react';
 
 const LINKS = [
         {
-                href: '/',
-                text: 'home'
+            href: '/',
+            text: 'home'
         },
         {
-                href: '/about',
-                text: 'about'
+            href: '/about',
+            text: 'about'
         },
         {
-                href: '/projects',
-                text: 'projects'
+            href: '/projects',
+            text: 'projects'
         },
         {
-                href: '/blog',
-                text: 'blog'
+            href: '/blog',
+            text: 'blog'
         }
 ];
 
