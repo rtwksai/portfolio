@@ -14,6 +14,11 @@ import { getAllFilesFrontMatter } from '../lib/mdx'
 import BlogPost from '../components/BlogPost'
 
 import { SearchIcon } from '@chakra-ui/icons'
+import { NextSeo } from 'next-seo'
+
+const url = 'https://rithwiksai.tech/blog'
+const title = 'Blog - Rithwik'
+const description = "Developer and an undergraduate IIIT Bangalore, India."
 
 export default function Blog({ posts }) {
     const [searchValue, setSearchValue] = useState('')
@@ -27,6 +32,17 @@ export default function Blog({ posts }) {
 
     return (
         <>
+        {/* TODO add more SEO RELATED STUFF https://www.npmjs.com/package/next-seo */}
+        <NextSeo
+            title={title}
+            description={description}
+            canonical={url}
+            openGraph={{
+            url,
+            title,
+            description
+            }}
+        />
             <Head>
                 <title>Blog - Rithwik</title>
             </Head>
@@ -56,10 +72,10 @@ export default function Blog({ posts }) {
                                 onChange={(e) => setSearchValue(e.target.value)}
                             />
                             <InputRightElement>
-                                <SearchIcon color="gray.300" />
+                                <SearchIcon color="gray.500" />
                             </InputRightElement>
                         </InputGroup>
-                        {!filteredBlogPosts.length && 'No posts found :('}
+                        {!filteredBlogPosts.length && 'No posts found'}
                         {filteredBlogPosts.map((frontMatter) => <BlogPost key={frontMatter.title} {...frontMatter} />)}
                     </Flex>
                 </Stack>
