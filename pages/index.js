@@ -89,7 +89,7 @@ export default function Home() {
                             </ChakraLink>{' '}
                             and many more interesting things. 
                             Feel free to reach out via {' '}
-                            <ChakraLink href="mailto:sai.rithwik@iiitb.org" color={linkColor[colorMode]}>
+                            <ChakraLink href="mailto:sai.rithwik@iiitb.ac.in" color={linkColor[colorMode]}>
                                 email
                             </ChakraLink>{' '}
                             or any social media.

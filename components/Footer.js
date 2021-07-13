@@ -20,7 +20,7 @@ const Copyright = (props) => (
 
 const SocialMediaLinks = (props) => (
     <ButtonGroup variant="ghost" color="gray.600" {...props}>
-        <IconButton borderRadius='10px' as="a" href="mailto:sai.rithwik@iiitb.org" aria-label="eMail" icon={<FaRegEnvelope fontSize="20px" />} />
+        <IconButton borderRadius='10px' as="a" href="mailto:sai.rithwik@iiitb.ac.in" aria-label="eMail" icon={<FaRegEnvelope fontSize="20px" />} />
         <IconButton borderRadius='10px' as="a" href="https://www.linkedin.com/in/sai-rithwik-m/" aria-label="LinkedIn" icon={<FaLinkedin fontSize="20px" />} />
         <IconButton borderRadius='10px' as="a" href="https://github.com/DaKeiser" aria-label="GitHub" icon={<FaGithub fontSize="20px" />} />
         <IconButton borderRadius='10px' as="a" href="https://twitter.com/DaKeiser" aria-label="Twitter" icon={<FaTwitter fontSize="20px" />} />
