@@ -56,7 +56,6 @@ const Footer = () => {
                     <Text textAlign="center" fontSize="sm">
                         Built with{' '}
                         <chakra.span fontWeight="semibold" color={linkColor[colorMode]}>
-                            <NextLink href={`https://nextjs.org`} passHref> Next.js </NextLink>
                             <a href="https://nextjs.org">Next.js</a>
                         </chakra.span>{' '}
                         &{' '}
