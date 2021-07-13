@@ -14,7 +14,7 @@ import Container from '../components/Container'
 import {linkColor, secondaryTextColor} from '../styles/darkMode'
 import InterestTag from '../components/Interest'
 
-const url = 'https://localhost:3000/'
+const url = 'https://rithwiksai.tech/about'
 const title = 'About - Rithwik'
 const description = "Developer and an undergraduate IIIT Bangalore, India."
 
