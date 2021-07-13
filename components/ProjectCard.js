@@ -34,9 +34,6 @@ const ProjectCard = ({ title, href, children, src, alt }) => {
                 borderColor={borderColor[colorMode]}
                 borderRadius={4}
                 p={4}
-                // justifyContent="center"
-                // flexDirection="column"
-                // alignItems="center"
             >
                 <Image
                     src={src}
