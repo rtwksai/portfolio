@@ -17,8 +17,9 @@ import { NextSeo } from 'next-seo'
 import { linkColor } from '../styles/darkMode'
 import Container from '../components/Container'
 import ProjectCard from '../components/ProjectCard'
+import BlogPost from '../components/BlogPost'
 
-const url = 'https://localhost:3000/'
+const url = 'https://rithwiksai.tech'
 const title = 'Home - Rithwik'
 const description = "Developer and an undergraduate IIIT Bangalore, India."
 
@@ -119,30 +120,57 @@ export default function Home() {
                         letterSpacing="tight" 
                         size="lg"
                         fontWeight={700} 
+                        mb={6}
                     >
                         Featured Projects
                     </Heading>
-                    <br/>
+                    
                     <ProjectCard
                     title="CovIntel"
                     href="https://github.com/DaKeiser/chaos"
                     src="/images/chaos-td.png"
                     alt='Chaos'
-                    // color={iconColor[colorMode]}
                     >
-                        CovIntel is a one stop AI solution for complete surveillance and vaccine monitoring. 
+                        CovIntel is a one stop AI solution for vaccine surveillance and monitoring. 
                         New cases are predicted over a duration, for a given geography and given vaccine and generates visualisations.
                     </ProjectCard>
+
+                    <Flex justify="center" width="100%">
+                        <NextLink href="/projects" passHref>
+                            <ChakraLink _hover="none" mt={8}>
+                            <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all projects">
+                                View All Projects
+                            </Button>
+                            </ChakraLink>
+                        </NextLink>
+                    </Flex>   
+
+                    <Divider mb={12} mt={16} w='100%' alignSelf="center" />
+
+                    <Heading 
+                        letterSpacing="tight" 
+                        size="lg"
+                        fontWeight={700} 
+                        mb={6}
+                    >
+                        Featured Blogs
+                    </Heading>
+                    <BlogPost
+                        title="It is a test"
+                        publishedAt="2021-07-02"
+                        summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum orci ut turpis pulvinar, ac blandit ligula mollis. Aliquam erat volutpat. Cras lobortis, libero at volutpat efficitur, nibh diam sagittis arcu, eget viverra urna felis nec dui."
+                        slug="test1"
+                    />
                 </Flex>
                 <Flex justify="center" width="100%">
-                    <NextLink href="/projects" passHref>
-                        <ChakraLink _hover="none" mt={8}>
-                        <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all projects">
-                            View All Projects
+                    <NextLink href="/blog" passHref>
+                        <ChakraLink _hover="none" mt={3}>
+                        <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all blogs">
+                            View All Blogs
                         </Button>
                         </ChakraLink>
                     </NextLink>
-                </Flex>
+                </Flex>                
             </Container>
         </>
 	)
