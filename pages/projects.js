@@ -4,38 +4,39 @@ import {
     Heading,
     Flex,
     Stack,
-    Input,
-    InputGroup,
-    InputRightElement,
-    SimpleGrid
+    SimpleGrid,
+    useColorMode
 } from '@chakra-ui/react'
+
+import { NextSeo } from 'next-seo'
 
 import ProjectCardBig from '../components/ProjectCardBig'
 import Container from '../components/Container'
 
-
-const projects = [
-    {
-        // key: 'Chaos'
-        // imageURL: 'https://abdulrahman.id/_next/image?url=https%3A%2F%2Fi.imgur.com%2FaKLwHif.png&w=1920&q=75'
-        // title: 'Chaos'
-        // desc: "Someyhih"
-        // githubLink: 'https://github.com/DaKeiser/chaos'
-        // deployLink: 'http://covintel.centralindia.cloudapp.azure.com:8000/'
-        // tag: {["Python"]}
-    },
-
-    {
-
-    },
-
-]
+const url = 'https://rithwiksai.tech/projects'
+const title = 'Projects - Rithwik'
+const description = "Developer and an undergraduate IIIT Bangalore, India."
 
 
 export default function Project() {
-    const [imageLoad, setImageLoad] = useState(false);
+    const portfolioColor = {
+        light: '/images/portfolio.png',
+        dark: '/images/portfolio-1.png'
+    }
+    const { colorMode } = useColorMode()
     return (
         <>
+        {/* TODO add more SEO RELATED STUFF https://www.npmjs.com/package/next-seo */}
+        <NextSeo
+            title={title}
+            description={description}
+            canonical={url}
+            openGraph={{
+            url,
+            title,
+            description
+            }}
+        />
             <Head>
                 <title>Projects - Rithwik</title>
             </Head>
@@ -53,45 +54,50 @@ export default function Project() {
                         alignItems="flex-start"
                         maxWidth="800px"
                     >
-                        <Heading letterSpacing="tight" mb={14} as="h1" size="2xl">
+                        <Heading letterSpacing="tight" mb={8} as="h1" size="2xl">
                             Projects
                         </Heading>
-                        <SimpleGrid isLoaded={imageLoad} columns={{ sm: 1, md: 2 }} spacing={8}>
+                        <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={8}>
                             <ProjectCardBig
-                                key='Chaos1'
-                                imageURL='https://abdulrahman.id/_next/image?url=https%3A%2F%2Fi.imgur.com%2FaKLwHif.png&w=1920&q=75'
-                                title='Chaos'
-                                desc="Someyhih"
+                                key='Covintel'
+                                imageURL='/images/CovIntel.png'
+                                title='CovIntel'
+                                desc="CovIntel is a one stop AI solution for vaccine surveillance and monitoring. 
+                                    New cases and time taken to reach herd immunity are predicted over a duration, 
+                                    for a given geography and given vaccine and generates visualisations."
                                 githubLink='https://github.com/DaKeiser/chaos'
                                 deployLink='http://covintel.centralindia.cloudapp.azure.com:8000/'
+                                tag={["Python", "ML", "Docker"]}
+                            />
+                            <ProjectCardBig
+                                key='portfolio'
+                                imageURL={portfolioColor[colorMode]}
+                                title='Portfolio'
+                                desc="Personal portfolio site, where I share updates regarding myself, blogs or any projects that I have made.
+                                Built using Next.js and Chakra UI, the portfolio is responsive and I have used mdx-pages for blog posting."
+                                githubLink='https://github.com/DaKeiser/portfolio'
+                                deployLink='https://rithwiksai.tech'
+                                tag={["Next.js", "Chakra UI", "React"]}
+                            />                            
+                            <ProjectCardBig
+                                key='contest-bot'
+                                imageURL='/images/contest-bot.png'
+                                title='Codeforces Notifier Bot'
+                                desc="A notifier bot on discord which reminds the user regarding the next contest on Codeforces. 
+                                The bot notifies whenever there is a user request or a new contest.
+                                Given an API endpoint this project can be extended as a reminder for any coding platform. "
+                                githubLink='https://github.com/DaKeiser/contest-bot'
                                 tag={["Python"]}
                             />
                             <ProjectCardBig
-                                key='Chaos2'
-                                imageURL='https://abdulrahman.id/_next/image?url=https%3A%2F%2Fi.imgur.com%2FaKLwHif.png&w=1920&q=75'
-                                title='Chaos'
-                                desc="Someyhih"
-                                githubLink='https://github.com/DaKeiser/chaos'
-                                deployLink='http://covintel.centralindia.cloudapp.azure.com:8000/'
-                                tag={["Python"]}
-                            />
-                            <ProjectCardBig
-                                key='Chaos3'
-                                imageURL='https://abdulrahman.id/_next/image?url=https%3A%2F%2Fi.imgur.com%2FaKLwHif.png&w=1920&q=75'
-                                title='Chaos'
-                                desc="Someyhih"
-                                githubLink='https://github.com/DaKeiser/chaos'
-                                deployLink='http://covintel.centralindia.cloudapp.azure.com:8000/'
-                                tag={["Python"]}
-                            />
-                            <ProjectCardBig
-                                key='Chaos4'
-                                imageURL='https://abdulrahman.id/_next/image?url=https%3A%2F%2Fi.imgur.com%2FaKLwHif.png&w=1920&q=75'
-                                title='Chaos'
-                                desc="Someyhih"
-                                githubLink='https://github.com/DaKeiser/chaos'
-                                deployLink='http://covintel.centralindia.cloudapp.azure.com:8000/'
-                                tag={["Python"]}
+                                key='mips'
+                                imageURL='/images/MIPS.png'
+                                title='MIPS Processor'
+                                desc="A non-pipelined 32-bit MIPS Simulator in Verilog. 
+                                The processor supports operations like Load, Store, Branch Equality, Addition etc.
+                                The appliction is built keeping modularity in nature which allows addition of new operations easily."
+                                githubLink='https://github.com/DaKeiser/mips'
+                                tag={["Verilog", "GTKWave"]}
                             />
                         </SimpleGrid>                        
                     </Flex>
@@ -100,91 +106,3 @@ export default function Project() {
         </>
     )
 }
-
-
-
-
-// export default function Projects() {
-//     const [query, setQuery] = useState(false)
-//     const handleChange = (e) => { setQuery(e.target.value) }
-//     const { colorMode } = useColorMode()
-    
-//     const [searchValue, setSearchValue] = useState('')
-
-//     const filteredBlogPosts = posts
-//         .sort(
-//             (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-//         )
-//         .filter((frontMatter) =>
-//             frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()))
-
-//     const [searchValue, setSearchValue] = useState('')
-
-//     const filteredBlogPosts = posts
-//         .sort(
-//             (a, b) => Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-//         )
-//         .filter((frontMatter) =>
-//             frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()))
-
-// 	return (
-//         <>
-//             {/* TODO add more SEO RELATED STUFF https://www.npmjs.com/package/next-seo */}
-//             <NextSeo
-//                 title={title}
-//                 description={description}
-//                 canonical={url}
-//                 openGraph={{
-//                 url,
-//                 title,
-//                 description
-//                 }}
-//             />
-//             <Container>
-//                 <Stack spacing={5}>
-//                     {' '}
-//                     <Text fontSize={{ base: '14px', md: '16px' }}>
-//                         I love building projects and practice my engineering skills,
-//                         here's an archive of things that I've worked on.
-//                     </Text>
-//                     <InputGroup maxW="400px">
-//                         <InputRightElement pointerEvents="none" children={<FaSearch />} />
-//                         <Input
-//                         type="text"
-//                         placeholder="Search projects"
-//                         value={query}
-//                         onChange={handleChange}
-//                         />
-//                     </InputGroup>
-//                     <Divider />
-//                 </Stack>
-//                 <SimpleGrid columns={{ sm: 1, md: 2 }} spacing={8}>
-//                     {/* {projects
-//                     .filter((e) =>
-//                         e.fields.title.toLowerCase().includes(query.toLowerCase()),
-//                     )
-//                     .map((project) => (
-//                         <ProjectCardBig
-//                         key={project.fields.title}
-//                         imageURL={project.fields.imageUrl}
-//                         title={project.fields.title}
-//                         desc={project.fields.description}
-//                         githubLink={project.fields.githubLink}
-//                         deployLink={project.fields.deployLink}
-//                         tag={project.fields.tags}
-//                         />
-//                     ))} */}
-//                         <ProjectCardBig
-//                             key='Chaos'
-//                             imageURL='https://abdulrahman.id/_next/image?url=https%3A%2F%2Fi.imgur.com%2FaKLwHif.png&w=1920&q=75'
-//                             title='Chaos'
-//                             desc="Someyhih"
-//                             githubLink='https://github.com/DaKeiser/chaos'
-//                             deployLink='http://covintel.centralindia.cloudapp.azure.com:8000/'
-//                             tag={["Python"]}
-//                         />
-//                 </SimpleGrid>
-//             </Container>
-//         </>
-// 	)
-// }
