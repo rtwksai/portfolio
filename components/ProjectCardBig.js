@@ -7,6 +7,8 @@ import {
     TagLabel,
     Link,
     Image,
+    Skeleton,
+    useColorMode,
     ScaleFade
 } from '@chakra-ui/react'
 
@@ -19,11 +21,18 @@ import {
     FaReact,
     FaCode,
     FaWhmcs,
-    FaExternalLinkAlt
+    FaExternalLinkAlt,
+    FaEthernet,
+    FaWaveSquare
 } from 'react-icons/fa'
+
+import { SiNextDotJs } from "react-icons/si";
+import { AiFillThunderbolt } from "react-icons/ai";
 
 import { useMediaQuery } from 'react-responsive';
 import ReactGA from 'react-ga'
+import React, { useState } from 'react'
+import { bgColor, primaryTextColor, iconColor, borderColor, secondaryTextColor, shadowColor } from '../styles/darkMode'
 
 export default function ProjectCardBig({
     imageURL,
@@ -51,7 +60,7 @@ export default function ProjectCardBig({
             values[0] = 'green'
             values[1] = FaPepperHot
         }
-        else if (tag == 'docker') {
+        else if (tag == 'Docker') {
             values[0] = 'blue'
             values[1] = FaDocker
         }
@@ -60,8 +69,24 @@ export default function ProjectCardBig({
             values[1] = FaDatabase
         }
         else if(tag == 'ML' ) {
-            values[0] = 'gray'
+            values[0] = 'pink'
             values[1] = FaWhmcs
+        }
+        else if(tag == 'Verilog' ) {
+            values[0] = 'purple'
+            values[1] = FaEthernet
+        }
+        else if(tag == 'GTKWave' ) {
+            values[0] = 'red'
+            values[1] = FaWaveSquare
+        }
+        else if(tag == 'Next.js' ) {
+            values[0] = 'gray'
+            values[1] = SiNextDotJs
+        }
+        else if(tag == 'Chakra UI' ) {
+            values[0] = 'teal'
+            values[1] = AiFillThunderbolt
         }
         else {
             values[0] = 'gray'
@@ -69,6 +94,9 @@ export default function ProjectCardBig({
         }        
         return values
     }
+
+    const { colorMode } = useColorMode()
+    const [opacity, setOpacity] = useState(0)
 
     const isBigScreen = useMediaQuery({ minWidth: 600 });
 
@@ -90,6 +118,8 @@ export default function ProjectCardBig({
         })
     }
 
+    const [imageLoad, setImageLoad] = useState(false);
+
     return (
         <Stack
             bg="secondary"
@@ -97,24 +127,33 @@ export default function ProjectCardBig({
             minH="320px"
             maxH="500px"
             border="1px"
-            borderColor={{ base: '#333', md: 'borderColor' }}
+            borderColor={{ base: '#333', md: borderColor[colorMode] }}
+            _hover={{
+                boxShadow: shadowColor[colorMode],
+                textDecoration: 'none'
+            }}
+            mt={4}
+            onMouseOver={() => setOpacity(1)}
+            onMouseLeave={() => setOpacity(0)}
         >
         <ScaleFade in={true} transition={{ duration: 1 }}>
-            <Image
-                width={1250}
-                height={600}
-                w="auto"
-                h="auto"
-                src={imageURL}
-                transition="0.3s"
-                borderRadius="10px 10px 0px 0px"
-                alt="project image"
-                onLoad={() => setImageLoad(true)}
-            ></Image>
+            <Skeleton isLoaded={imageLoad} height='auto' m='auto' borderRadius="10px 10px 0px 0px">
+                <Image
+                    width={1250}
+                    height={600}
+                    w="auto"
+                    h="auto"
+                    src={imageURL}
+                    transition="0.3s"
+                    borderRadius="10px 10px 0px 0px"
+                    alt="project image"
+                    onLoad={() => setImageLoad(true)}
+                ></Image>
+            </Skeleton>
             <Stack px={4} py={2}>
                 <Stack isInline justifyContent="space-between" alignItems="center">
-                <Text fontSize="2xl" color="displayColor">
-                    {title}
+                <Text fontSize="2xl" color={primaryTextColor[colorMode]}>
+                    <strong>{title}</strong>
                 </Text>
                 <Stack
                     isInline
@@ -125,11 +164,10 @@ export default function ProjectCardBig({
                     {githubLink && (
                     <Link
                         href={githubLink}
-                        color="white"
+                        color={iconColor[colorMode]}
                         onClick={() =>
                         handleClick(`githublink_${title.replace('@', '-at-')}`)
                         }
-                        isExternal
                     >
                         <FaGithub size={23} />
                     </Link>
@@ -137,11 +175,10 @@ export default function ProjectCardBig({
                     {deployLink && (
                     <Link
                         href={deployLink}
-                        color="white"
+                        color={iconColor[colorMode]}
                         onClick={() =>
                         handleClick(`deploylink_${title.replace('@', '-at')}`)
                         }
-                        isExternal
                     >
                         <FaExternalLinkAlt size={20} />
                     </Link>
@@ -150,7 +187,7 @@ export default function ProjectCardBig({
             </Stack>
             <Stack isInline>{Tags}</Stack>
             <Divider />
-            <Text color="textSecondary" fontSize={['sm', 'md']}>
+            <Text color={secondaryTextColor[colorMode]} fontSize={['sm', 'sm']}>
                 {desc}
             </Text>
             </Stack>
