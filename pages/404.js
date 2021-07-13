@@ -9,7 +9,7 @@ import {
     Link as ChakraLink,
     Button
 } from '@chakra-ui/react';
-import { ArrowForwardIcon, FaHome } from '@chakra-ui/icons'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link';
 
 const url = 'https://rithwiksai.tech'
@@ -34,7 +34,7 @@ export default function Custom404() {
                 <Flex justify="center" width="100%">
                     <NextLink href="/" passHref>
                         <ChakraLink _hover="none" mt={8}>
-                        <Button leftIcon={FaHome} rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="redirect">
+                        <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="redirect">
                             TAKE ME HOME!!!
                         </Button>
                         </ChakraLink>
