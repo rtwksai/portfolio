@@ -1,4 +1,4 @@
 User-Agent: *
-Disallow: /
+Disallow:
 
 # Nothing intersting left here :(
