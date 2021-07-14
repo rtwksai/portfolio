@@ -74,7 +74,7 @@ export default function Project() {
                                 imageURL={portfolioColor[colorMode]}
                                 title='Portfolio'
                                 desc="Personal portfolio site, where I share updates regarding myself, blogs or any projects that I have made.
-                                Built using Next.js and Chakra UI, the portfolio is responsive and I have used mdx-pages for blog posting."
+                                Built using Next.js and Chakra UI, the portfolio is responsive and I have used mdx-pages for blog page customisations."
                                 githubLink='https://github.com/DaKeiser/portfolio'
                                 deployLink='https://rithwiksai.tech'
                                 tag={["Next.js", "Chakra UI", "React"]}
@@ -85,7 +85,7 @@ export default function Project() {
                                 title='Codeforces Notifier Bot'
                                 desc="A notifier bot on discord which reminds the user regarding the next contest on Codeforces. 
                                 The bot notifies whenever there is a user request or a new contest.
-                                Given an API endpoint this project can be extended as a reminder for any coding platform. "
+                                Given an API endpoint this project can be extended as a reminder for any contest platform. "
                                 githubLink='https://github.com/DaKeiser/contest-bot'
                                 tag={["Python"]}
                             />
