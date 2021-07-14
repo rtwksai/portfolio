@@ -16,8 +16,13 @@ import InterestTag from '../components/Interest'
 
 const url = 'https://rithwiksai.tech/about'
 const title = 'About - Rithwik'
-const description = "Developer and an undergraduate IIIT Bangalore, India."
-
+const description = "About me! My interests in tech, my favourite places, my music interests and many more"
+const images = [{
+    url: '/images/r.png',
+    width: 800,
+    height: 600,
+    alt: 'Og Image Alt',
+}]
 
 const Interests = {
     like: [
@@ -63,7 +68,8 @@ export default function About() {
                 openGraph={{
                 url,
                 title,
-                description
+                description,
+                images
                 }}
             />
             <Container>

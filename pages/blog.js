@@ -18,7 +18,13 @@ import { NextSeo } from 'next-seo'
 
 const url = 'https://rithwiksai.tech/blog'
 const title = 'Blog - Rithwik'
-const description = "Developer and an undergraduate IIIT Bangalore, India."
+const description = "My blogs! I write about DFIR, blockchains, platforms and probably anything interesting about tech or some small feature that gets my attention."
+const images = [{
+    url: '/images/r.png',
+    width: 800,
+    height: 600,
+    alt: 'Og Image Alt',
+}]
 
 export default function Blog({ posts }) {
     const [searchValue, setSearchValue] = useState('')
@@ -40,7 +46,8 @@ export default function Blog({ posts }) {
             openGraph={{
             url,
             title,
-            description
+            description,
+            images
             }}
         />
             <Head>

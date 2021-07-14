@@ -15,7 +15,13 @@ import Container from '../components/Container'
 
 const url = 'https://rithwiksai.tech/projects'
 const title = 'Projects - Rithwik'
-const description = "Developer and an undergraduate IIIT Bangalore, India."
+const description = "A gallery of the projects I have worked on"
+const images = [{
+    url: '/images/r.png',
+    width: 800,
+    height: 600,
+    alt: 'Og Image Alt',
+}]
 
 
 export default function Project() {
@@ -34,7 +40,8 @@ export default function Project() {
             openGraph={{
             url,
             title,
-            description
+            description,
+            images
             }}
         />
             <Head>

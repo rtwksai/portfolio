@@ -14,7 +14,13 @@ import NextLink from 'next/link';
 
 const url = 'https://rithwiksai.tech'
 const title = '404 - Rithwik'
-const description = "Developer and an undergraduate IIIT Bangalore, India."
+const description = "Error: Page not found - Rithwik"
+const images = [{
+    url: '/images/r.png',
+    width: 800,
+    height: 600,
+    alt: 'Og Image Alt',
+}]
 
 export default function Custom404() {
 	return (
@@ -26,7 +32,8 @@ export default function Custom404() {
                 openGraph={{
                 url,
                 title,
-                description
+                description,
+                images
                 }}
             />
             <Container>
