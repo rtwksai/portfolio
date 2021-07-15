@@ -160,13 +160,13 @@ export default function Home() {
                         fontWeight={700} 
                         mb={6}
                     >
-                        Featured Blogs
+                        Latest Blogs
                     </Heading>
                     <BlogPost
-                        title="It is a test"
-                        publishedAt="2021-07-02"
-                        summary="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fermentum orci ut turpis pulvinar, ac blandit ligula mollis. Aliquam erat volutpat. Cras lobortis, libero at volutpat efficitur, nibh diam sagittis arcu, eget viverra urna felis nec dui."
-                        slug="test1"
+                        title="WhatsApp animated stickers and synchronisation"
+                        publishedAt="2021-07-15"
+                        summary="Have you ever observed your WhatsApp animated stickers in sync? I wanted to understand how it worked, and whether it was in sync for all users, and here's my observation."
+                        slug="whatsapp_stickers"
                     />
                 </Flex>
                 <Flex justify="center" width="100%">

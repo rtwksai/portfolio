@@ -7,9 +7,12 @@ import {
     Link,
     Text,
     Divider,
-    useColorMode
+    useColorMode,
+    Image
 } from '@chakra-ui/react'
 import { jsx } from '@emotion/react'
+// import CNImage from './ChakraNextImage'
+
 import NextLink from 'next/link'
 
 const CustomLink = (props) => {
@@ -113,6 +116,12 @@ const Hr = () => {
     return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />
 }
 
+
+const MyImage = props => (
+    <img style={{ maxWidth: "100%", borderRadius: "10px" }} {...props} />
+)
+
+
 const MDXComponents = {
     h1: (props) => <Heading as="h1" size="xl" my={4} {...props} />,
     h2: (props) => <DocsHeading as="h2" size="lg" fontWeight="bold" {...props} />,
@@ -125,6 +134,15 @@ const MDXComponents = {
     ),
     br: (props) => <Box height="24px" {...props} />,
     hr: Hr,
+    img: (props) => (
+        <Image
+            width={250}
+            height={250}
+            borderRadius="10px"
+            align="center"
+            {...props}
+        />
+    ),
     a: CustomLink,
     p: (props) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
     ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,

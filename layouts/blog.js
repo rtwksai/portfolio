@@ -58,7 +58,7 @@ export default function BlogLayout({ children, frontMatter }) {
                             <Avatar
                                 size="xs"
                                 name="Sai Rithwik M"
-                                src="../images/portrait.jpeg"
+                                src="../images/block_im.jpeg"
                                 mr={2}
                             />
                             <Text fontSize="sm" color={textColor[colorMode]}>
