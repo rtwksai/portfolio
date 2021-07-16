@@ -32,7 +32,7 @@ const ProjectCard = ({ title, href, children, src, alt }) => {
                 align="center"
                 border="1px solid"
                 borderColor={borderColor[colorMode]}
-                borderRadius={4}
+                borderRadius={10}
                 p={4}
             >
                 <Image
