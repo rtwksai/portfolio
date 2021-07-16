@@ -8,10 +8,10 @@ import {
     Text,
     Divider,
     useColorMode,
-    Image
+    // Image
 } from '@chakra-ui/react'
 import { jsx } from '@emotion/react'
-// import CNImage from './ChakraNextImage'
+import Image from './ChakraNextImage'
 
 import NextLink from 'next/link'
 
@@ -116,11 +116,7 @@ const Hr = () => {
     return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />
 }
 
-
-const MyImage = props => (
-    <img style={{ maxWidth: "100%", borderRadius: "10px" }} {...props} />
-)
-
+// const { colorMode } = useColorMode()
 
 const MDXComponents = {
     h1: (props) => <Heading as="h1" size="xl" my={4} {...props} />,
@@ -131,18 +127,31 @@ const MDXComponents = {
     h6: (props) => <DocsHeading as="h6" size="xs" fontWeight="bold" {...props} />,
     inlineCode: (props) => (
         <Code colorScheme="yellow" fontSize="0.84em" {...props} />
+        ),
+        img: (props) => (
+        <>
+            <Image
+                width={750}
+                height={300}
+                align="center"
+                w="auto"
+                h="auto"
+                mx="auto"          
+                layout="responsive"
+                objectFit="contain"
+                {...props}
+            />
+            <Text
+                textAlign='center'
+                mt={2}
+                fontSize='xs'
+            >
+                {props['alt']}
+            </Text>
+        </>
     ),
     br: (props) => <Box height="24px" {...props} />,
     hr: Hr,
-    img: (props) => (
-        <Image
-            width={250}
-            height={250}
-            borderRadius="10px"
-            align="center"
-            {...props}
-        />
-    ),
     a: CustomLink,
     p: (props) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
     ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,

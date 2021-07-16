@@ -4,7 +4,7 @@ import NextImage from 'next/image'
 
 const Image = chakra(NextImage, {
     shouldForwardProp: (prop) =>
-        ['width', 'height', 'src', 'alt', 'objectPosition'].includes(prop),
+        ['width', 'height', 'src', 'alt'].includes(prop),
 })
 
 export default Image
