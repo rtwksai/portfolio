@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NextLink from 'next/link'
-import { useColorMode, Heading, Text, Flex, Box, Link } from '@chakra-ui/react'
+import { useColorMode, Heading, Text, Flex, Stack, Box, Link } from '@chakra-ui/react'
 import { parseISO, format } from 'date-fns'
+import { borderColor, secondaryTextColor, shadowColor } from '../styles/darkMode'
 
 const BlogPost = ({ title, publishedAt, summary, slug }) => {
     const { colorMode } = useColorMode()
-    const secondaryTextColor = {
-        light: 'gray.700',
-        dark: 'gray.400'
-    }
+    const [opacity, setOpacity] = useState(0)
 
     return (
         <NextLink href={`blog/${slug}`} passHref>
-            <Link w="100%" _hover={{ textDecoration: 'none' }}>
-                <Box mb={10} display="block" width="100%">
+            <Link 
+                w="100%"             
+                isExternal
+                _hover={{
+                    boxShadow: shadowColor[colorMode],
+                    textDecoration: 'none'
+                }}
+                mt={4}
+                mb={6}
+                onMouseOver={() => setOpacity(1)}
+                onMouseLeave={() => setOpacity(0)}
+            >
+                <Flex
+                    align="center"
+                    border="1px solid"
+                    borderColor={borderColor[colorMode]}
+                    borderRadius={10}
+                    p={4}
+                >
+                    <Stack>
                     <Flex
                         width="100%"
                         align="flex-start"
@@ -21,7 +37,7 @@ const BlogPost = ({ title, publishedAt, summary, slug }) => {
                         flexDirection={['column', 'row']}
                     >
                         <Flex flexDirection="column" align="flex-start" justifyContent="start" width="100%">
-                            <Heading size="md" as="h3" mb={1} fontWeight="medium">
+                            <Heading size="md" as="h3" mb={2} fontWeight="medium">
                                 {title}
                             </Heading>
                         </Flex>
@@ -30,14 +46,15 @@ const BlogPost = ({ title, publishedAt, summary, slug }) => {
                             color="gray.500"
                             minWidth="140px"
                             textAlign={['left', 'right']}
+                            mt={[2, 0]}
                             mb={[4, 0]}
                         >
                             {format(parseISO(publishedAt), 'MMMM dd, yyyy')}
                         </Text>
-
                     </Flex>
                     <Text color={secondaryTextColor[colorMode]}>{summary}</Text>
-                </Box>
+                    </Stack>
+                </Flex>
             </Link>
         </NextLink>
     )
