@@ -11,8 +11,7 @@ const BlogPost = ({ title, publishedAt, summary, slug }) => {
     return (
         <NextLink href={`blog/${slug}`} passHref>
             <Link 
-                w="100%"             
-                isExternal
+                w="100%"
                 _hover={{
                     boxShadow: shadowColor[colorMode],
                     textDecoration: 'none'
