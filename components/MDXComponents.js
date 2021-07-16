@@ -8,10 +8,15 @@ import {
     Text,
     Divider,
     useColorMode,
+    UnorderedList,
+    OrderedList,
+    ListItem,
+    chakra
     // Image
 } from '@chakra-ui/react'
 import { jsx } from '@emotion/react'
 import Image from './ChakraNextImage'
+import { secondaryTextColor } from '../styles/darkMode'
 
 import NextLink from 'next/link'
 
@@ -106,6 +111,11 @@ const DocsHeading = (props) => (
     </Heading>
 )
 
+const CustomText = (props) => {
+    const { colorMode } = useColorMode()
+    return <Text color={secondaryTextColor[colorMode]} as="p" mt={0} lineHeight="tall" {...props} />
+}
+
 const Hr = () => {
     const { colorMode } = useColorMode()
     const borderColor = {
@@ -116,7 +126,24 @@ const Hr = () => {
     return <Divider borderColor={borderColor[colorMode]} my={4} w="100%" />
 }
 
-// const { colorMode } = useColorMode()
+const CUl = ({ children }) => {
+    return  (<UnorderedList pl={4} ml={2} fontSize='md' spacing={'4px'} mt={3}>
+        {children}
+    </UnorderedList>)
+}
+
+const COl = ({ children }) => {
+    return  (<OrderedList pl={4} ml={2} fontSize='md' spacing={'4px'} mt={3}>
+        {children}
+    </OrderedList>)
+}
+
+const CLi = ({ children }) => {
+    const { colorMode } = useColorMode()
+    return (<ListItem pb={1} color={secondaryTextColor[colorMode]}>
+        <chakra.span color={secondaryTextColor[colorMode]}>{children}</chakra.span>
+    </ListItem>)
+}
 
 const MDXComponents = {
     h1: (props) => <Heading as="h1" size="xl" my={4} {...props} />,
@@ -153,10 +180,10 @@ const MDXComponents = {
     br: (props) => <Box height="24px" {...props} />,
     hr: Hr,
     a: CustomLink,
-    p: (props) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
-    ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
-    ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
-    li: (props) => <Box as="li" pb={1} {...props} />,
+    p: (props) => <CustomText {...props} />,
+    ul: (props) => <CUl {...props}/>,
+    ol: (props) => <COl {...props}/>,
+    li: (props) => <CLi {...props}/>,
     blockquote: Quote
 }
 
