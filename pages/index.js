@@ -163,6 +163,12 @@ export default function Home() {
                         Latest Blogs
                     </Heading>
                     <BlogPost
+                        title="Causality and clocks in a dynamic distributed setting"
+                        publishedAt="2022-02-13"
+                        summary="Vector Clocks and Lamport Clocks do not scale well in a dynamic setting as they suffer from actor burst problem. This blog discusses about some issues with vector clocks and how Interval Tree Clocks can be helpful in this scenario."
+                        slug="dynamic_clocks"
+                    />
+                    <BlogPost
                         title="WhatsApp animated stickers and synchronisation"
                         publishedAt="2021-07-15"
                         summary="Have you ever observed your WhatsApp animated stickers in sync? I wanted to understand how it worked, and whether it was in sync for all users, and here's my observation."
