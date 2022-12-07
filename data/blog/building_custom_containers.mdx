@@ -1,0 +1,90 @@
+---
+title: ""
+publishedAt: "2021-07-15"
+summary: "Have you ever observed your WhatsApp animated stickers in sync? I wanted to understand how it worked, and whether it was in sync for all users, and in this blog I have noted my observations and some related code."
+---
+
+## Introduction
+Containers are a way of packaging and running applications in a consistent and isolated manner. They allow the users to fit an application into a single package that can be easily transferred and run on any compatible host. Containers are built on top of a container runtime, which is responsible for managing the containers and ensuring that they have the necessary resources and isolation to run properly. In this article, we are going to look more into the internals of containerisation and see what constructs they use to make them isolated in nature.
+
+## Lets get familiar with some terms
+Containers are able to generate isolated environments using a feature called namespaces. A namespace is a way of partitioning and isolating resources, such as processes, network interfaces, and filesystems, within a single host. We can always assume that whenever we are running a container, a set of namespaces are created for the container. There are various types of namespaces like
+- **User Namespaces**: Where a given process can have root priviliges in that namespace.
+- **PID Namespaces**: PID namespaces isolate the process ID number space, meaning PID namespaces allow multiple containers to run on a single Linux host without interfering with each other's processes. When a container runtime, such as Docker, creates a new container, it assigns the container its own PID namespace. This means that the processes running inside the container are only visible within the container's PID namespace, and are not visible to processes outside the container.
+
+There are many more namespaces like **mount** namespaces which provide isolated mounts to a namespace to the processes without affecting the host’s filesystem, **network** namespaces, **IPC** namespaces and **UTS** namespaces which help in containerising the application.
+
+Another rich feature of containers is that they limit the number of resources that can be accessed from a host. Control Groups(`cgroups`) allow the users to specify how resources, such as CPU time, memory, and disk I/O, are allocated to processes running on a system. In the context of containers, they ensure that containers can coexist on a single host without causing any performance issues for each other or for the host system.
+
+In further sections, we shall see how these namespaces can be leveraged to build a simple containerised environment.
+
+## Building your own container
+Let’s replicate how containers work using the stuff we learnt in previous sections. This article would focus more on the isolation aspect of containers from the processes and filesystem aspects.
+
+Processes must be self-contained in order to be considered containers ie. they must be able to view their own processes, filesystem mounts etc. The most important requirement is that they have a separate private filesystem from the host's filesystem. Let’s install a simple filesystem which we would be running inside our containerised environment. Let’s use Alpine filesystem for the same. For the demonstration, I am using v3.17.0 of Mini root fs tarball available from their downloads page. We shall add a file `THIS_IS_OUR_CONTAINER` to easily identify our filesystem on doing `ls`
+```bash
+mkdir container; cd container
+tar -xzvf /path/to/alpine-minirootfs-3.17.0-x86_64.tar.gz
+touch THIS_IS_OUR_CONTAINER
+```
+
+Now that we have our own filesystem, this is where the fun begins. We shall start isolating this ‘container’ folder to somewhat represent how containers behave. `chroot` is one such tool to help us root the filesystem at the specified path. `chroot` runs a process with its root filesystem at some user-defined location in the parent process's filesystem.
+
+```bash
+sudo chroot container /bin/sh
+```
+
+We can now see that we are rooted at our filesystem. We can easily verify that by doing commands like `cd ..` etc. So `chroot` has helped us isolate the process `/bin/sh` to this filesystem. But there is still an issue. We are able to manipulate the state of processes on our host through the container. To demonstrate open a new terminal on the host and run a process `top`. Now in our containerised environment, let’s mount the proc and try to kill the process `top` running in the host.
+
+```bash
+# running this on the container. The below step mounts the /proc in the filesystem.
+mount -t proc proc /proc
+pkill top
+```
+
+With this demonstration, we see that the process in the host system is killed. So we clearly understand that the process is not isolated yet. This is when we start using namespaces. `unshare` is a Linux command that helps create new namespaces. Let’s run this command in our host folder
+
+```bash
+sudo unshare --mount --uts --ipc --pid --fork --mount-proc=$PWD/container/proc chroot container /bin/sh
+```
+
+The command is pretty simple. We are essentially running our process `chroot container /bin/sh` in new namespaces. The tags `–mount`, `--uts` and so on create different namespaces as discussed in the previous section. `–-mount-proc` essentially creates a new PID namespace starting from PID 1, which is what we would expect inside a container. To demonstrate this, just run `top` or `ps aux` to verify. In a similar fashion, we can bind volumes onto our container which could help with storage. We shall not discuss networks and storage mounts in this article.
+
+One final thing left to do is to limit the number of resources used by our containers. As discussed previously, we can use `cgroups` to do the same. To check if `cgroups` is enabled
+
+```bash
+mount | grep cgroup | grep tmpfs
+```
+
+Must return an output. If it doesn’t, mount the following using the steps
+
+```bash
+# Perform commands as root
+su
+mkdir /sys/fs/cgroup/memory
+mount -t cgroup -o memory cgroup_memory /sys/fs/cgroup/memory
+```
+
+Once this is done, we now create a new memory group called as container-memory where the restricted processes will be placed. 
+
+```bash
+mkdir /sys/fs/cgroup/memory/container-memory
+echo 10000000 > /sys/fs/cgroup/memory/container-memory/memory.limit_in_bytes
+```
+
+Now that we have set the limit to 10MB, lets see how our container performs on load. We shall use the famous fork bomb `:(){ :|:& };:` to test our limits. Make sure you run this command in the containerised environment only. We see that after a few iterations we get the error `Resource temporarily unavailable`. This means that once the memory limit of 10MB is reached the process cannot seek more memory.
+
+This is a simple demonstration of how containers work underneath using the constructs of namespaces and control groups.
+
+## Conclusion
+
+From the above exercise, we have tried looking under the hood of containers and understood how they are just processes with some additional wraparounds and restrictions using namespaces and cgroups. We have learnt how to assign namespaces using commands like `unshare` and other commands. As an exercise readers can extend this by giving network access to the container by writing their own shell or Go scripts coupled with syscalls to replicate the same.
+
+## References:
+- [Build a container using Golang](https://www.infoq.com/articles/build-a-container-golang/)
+- [Containers from scratch](https://ericchiang.github.io/post/containers-from-scratch/)
+- [Build your own custom container without docker](https://www.freecodecamp.org/news/build-your-on-custom-container-without-docker/)
+- [Nginx documentation on cgroups](https://www.nginx.com/blog/what-are-namespaces-cgroups-how-do-they-work)
+- [Docker docs on how it works internally](https://docs.docker.com/get-started/overview/#the-underlying-technology)
+- [Containers from Scratch using cgroups](https://kevinboone.me/containerfromscratch_cgroup.html)
+- [Liz Rice’s demonstrations on building containers from scratch](https://www.youtube.com/watch?v=oSlheqvaRso)
