@@ -97,6 +97,7 @@ export default function Home() {
                             and many more interesting things.
                         </chakra.p>
                         <br/>
+						<br/>
                         <Flex justify={["center", "center", "left"]} width="100%">
                             <a href="/files/resume.pdf" target="_blank">
                                 <ChakraLink _hover="none" mt={8}>
