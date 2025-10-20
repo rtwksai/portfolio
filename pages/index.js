@@ -77,36 +77,35 @@ export default function Home() {
                             Hey, I&apos;m Rithwik!
                         </Heading>
                         <chakra.p
-                            maxW='650px'
-                            textAlign={{ base: `center`, lg: `left` }}
-                            fontSize='l'
-                            mt={2}
-                        >
-                            I&apos;m a Software Developer at {' '}
-                            <ChakraLink href="https://navi.com" target="_blank" color={linkColor[colorMode]}>Navi
-                            </ChakraLink>
-                            , where I worked on building solutions for Debt Recovery. We had built many solutions to improve the cash collection efficiency, agent productivity and improving customer contactability. I am passionate 
-                            about tech; specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering.
-                            My personal website is where I share my {' '}
-                            <ChakraLink href="/projects" color={linkColor[colorMode]}>
-                                projects
-                            </ChakraLink>,{' '} 
-                            <ChakraLink href="/blog" color={linkColor[colorMode]}>
-                                articles
-                            </ChakraLink>{' '}
-                            and many more interesting things.
-                        </chakra.p>
-                        <br/>
-						<br/>
-                        <Flex justify={["center", "center", "left"]} width="100%">
-                            <a href="/files/resume.pdf" target="_blank">
-                                <ChakraLink _hover="none" mt={8}>
-                                <Button leftIcon={<FaRegFileAlt />} colorScheme="gray" variant="outline" aria-label="view all projects">
-                                    My Resume
-                                </Button>
-                                </ChakraLink>
-                            </a>
-                        </Flex>
+						    maxW='650px'
+						    textAlign={{ base: `center`, lg: `left` }}
+						    fontSize='l'
+						    mt={2}
+						    mb={4}
+						>
+						    I&apos;m a Software Developer at {' '}
+						    <ChakraLink href="https://navi.com" target="_blank" color={linkColor[colorMode]}>Navi
+						    </ChakraLink>
+						    , where I worked on building solutions for Debt Recovery. We had built many solutions to improve the cash collection efficiency, agent productivity and improving customer contactability. I am passionate 
+						    about tech; specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering.
+						    My personal website is where I share my {' '}
+						    <ChakraLink href="/projects" color={linkColor[colorMode]}>
+						        projects
+						    </ChakraLink>,{' '} 
+						    <ChakraLink href="/blog" color={linkColor[colorMode]}>
+						        articles
+						    </ChakraLink>{' '}
+						    and many more interesting things.
+						</chakra.p>
+						<Flex justify={["center", "center", "left"]} width="100%">
+						    <a href="/files/resume.pdf" target="_blank">
+						        <ChakraLink _hover="none">
+						            <Button leftIcon={<FaRegFileAlt />} colorScheme="gray" variant="outline" aria-label="view all projects">
+						                My Resume
+						            </Button>
+						        </ChakraLink>
+						    </a>
+						</Flex>
                     </Flex>
                 </Flex>
                 
