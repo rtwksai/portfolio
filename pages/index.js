@@ -86,16 +86,8 @@ export default function Home() {
 						    I&apos;m a Software Developer at {' '}
 						    <ChakraLink href="https://navi.com" target="_blank" color={linkColor[colorMode]}>Navi
 						    </ChakraLink>
-						    , where I worked on building solutions for Debt Recovery. We had built many solutions to improve the cash collection efficiency, agent productivity and improving customer contactability. I am passionate 
-						    about tech; specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering.
-						    My personal website is where I share my {' '}
-						    <ChakraLink href="/projects" color={linkColor[colorMode]}>
-						        projects
-						    </ChakraLink>,{' '} 
-						    <ChakraLink href="/blog" color={linkColor[colorMode]}>
-						        articles
-						    </ChakraLink>{' '}
-						    and many more interesting things.
+						    , where I worked on building solutions for Debt Recovery. Over the past 2 years we built solutions to improve cash collection efficiency, agent productivity, and customer contactability. I am passionate 
+						    about tech, specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering. I love solving ambiguous business and product problems by transforming vague problem statements into simple and actionable solutions.
 						</chakra.p>
 						<Flex justify={["center", "center", "left"]} width="100%">
 						    <a href="/files/resume.pdf" target="_blank">
