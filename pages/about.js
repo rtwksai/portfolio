@@ -29,27 +29,14 @@ const Interests = {
     "Architecture",
     "Blockchains",
     "Crime Thrillers",
-    "Chess",
     "Current Affairs",
     "Hip-Hop",
     "Open Source",
     "Pizza",
-    "Reddit",
-    "Ricing",
-    "Societal Platforms",
-    "System Design"],    
+    "Reddit"],    
     
-    dislike: ["Data Science",
-    "EDM",
-    "Guesswork",
-    "Instagram",
-    "Malls",
-    "Romance(Genre)",
-    "Shopping",
-    "Singing",
-    "Snapchat",
-    "Nachos",
-    "OSINT"]
+    dislike: [
+    "Nachos"]
 };
 
 
