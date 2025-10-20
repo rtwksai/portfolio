@@ -82,11 +82,11 @@ export default function Home() {
                             fontSize='l'
                             mt={2}
                         >
-                            I&apos;m a Computer Science undergraduate at {' '}
-                            <ChakraLink href="https://www.iiitb.ac.in" target="_blank" color={linkColor[colorMode]}>IIIT Bangalore
+                            I&apos;m a Software Developer at {' '}
+                            <ChakraLink href="https://navi.com" target="_blank" color={linkColor[colorMode]}>Navi
                             </ChakraLink>
-                            , India. I am passionate 
-                            about tech; specifically in the fields of Distributed Computing, Blockchain, Forensics and Reverse Engineering.
+                            , where I worked on building solutions for Debt Recovery. We had built many solutions to improve the cash collection efficiency, agent productivity and improving customer contactability. I am passionate 
+                            about tech; specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering.
                             My personal website is where I share my {' '}
                             <ChakraLink href="/projects" color={linkColor[colorMode]}>
                                 projects
@@ -94,12 +94,7 @@ export default function Home() {
                             <ChakraLink href="/blog" color={linkColor[colorMode]}>
                                 articles
                             </ChakraLink>{' '}
-                            and many more interesting things. 
-                            Feel free to reach out via {' '}
-                            <ChakraLink href="mailto:sai.rithwik@iiitb.ac.in" color={linkColor[colorMode]}>
-                                email
-                            </ChakraLink>{' '}
-                            or any social media.
+                            and many more interesting things.
                         </chakra.p>
                         <br/>
                         <Flex justify={["center", "center", "left"]} width="100%">
