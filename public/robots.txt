@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Disallow PDF files from being indexed
+Disallow: /files/
+Disallow: /*.pdf
+
+# Sitemap
+Sitemap: https://rithwiksai.tech/sitemap.xml
