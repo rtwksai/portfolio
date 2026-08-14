@@ -18,8 +18,9 @@ import { linkColor } from '../styles/darkMode'
 import Container from '../components/Container'
 import ProjectCard from '../components/ProjectCard'
 import BlogPost from '../components/BlogPost'
+import { SITE_CONFIG } from '../lib/config'
 
-const url = 'https://rtwksai.com'
+const url = SITE_CONFIG.baseUrl
 const title = 'Home - Rithwik'
 const description = "Software developer @ CRED. Previously @ Navi. Grad @ IIIT Bangalore"
 const keywords = "Sai Rithwik, Rithwik, Sai Rithwik M, Madamanchi, Sai Rithwik Madamanchi, Sai Rithwik CRED, Sai Rithwik Navi, Sai Rithwik M CRED, Sai Rithwik M Navi, Sai Rithwik Madhamanchi CRED, Software Developer, IIIT Bangalore"
@@ -89,7 +90,7 @@ export default function Home() {
                                 "name": "Navi"
                             }
                         ],
-                        "url": "https://rtwksai.com",
+                        "url": SITE_CONFIG.baseUrl,
                         "sameAs": [
                             "https://github.com/rithwiksai",
                             "https://linkedin.com/in/rithwiksai"

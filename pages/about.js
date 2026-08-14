@@ -13,8 +13,9 @@ import { NextSeo } from 'next-seo'
 import Container from '../components/Container'
 import {linkColor, secondaryTextColor} from '../styles/darkMode'
 import InterestTag from '../components/Interest'
+import { SITE_CONFIG } from '../lib/config'
 
-const url = 'https://rtwksai.com/about'
+const url = `${SITE_CONFIG.baseUrl}/about`
 const title = 'About - Rithwik'
 const description = "About me! My interests in tech, my favourite places, my music interests and many more"
 const images = [{

@@ -12,8 +12,9 @@ import { NextSeo } from 'next-seo'
 
 import ProjectCardBig from '../components/ProjectCardBig'
 import Container from '../components/Container'
+import { SITE_CONFIG } from '../lib/config'
 
-const url = 'https://rtwksai.com/projects'
+const url = `${SITE_CONFIG.baseUrl}/projects`
 const title = 'Projects - Rithwik'
 const description = "A gallery of the projects I have worked on"
 const images = [{
@@ -83,7 +84,7 @@ export default function Project() {
                                 desc="Personal portfolio site, where I share updates regarding myself, blogs or any projects that I have made.
                                 Built using Next.js and Chakra UI, the portfolio is responsive and I have used mdx-pages for blog page customisations."
                                 githubLink='https://github.com/DaKeiser/portfolio'
-                                deployLink='https://rtwksai.com'
+                                deployLink={SITE_CONFIG.baseUrl}
                                 tag={["Next.js", "Chakra UI", "React"]}
                             />                            
                             <ProjectCardBig

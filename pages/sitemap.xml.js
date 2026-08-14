@@ -1,5 +1,7 @@
+import { SITE_CONFIG } from '../lib/config'
+
 export default function Sitemap() {
-  const baseUrl = 'https://rtwksai.com'
+  const baseUrl = SITE_CONFIG.baseUrl
   
   const routes = [
     {

@@ -11,8 +11,9 @@ import {
 } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link';
+import { SITE_CONFIG } from '../lib/config'
 
-const url = 'https://rtwksai.com'
+const url = SITE_CONFIG.baseUrl
 const title = '404 - Rithwik'
 const description = "Error: Page not found - Rithwik"
 const images = [{
