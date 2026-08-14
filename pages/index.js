@@ -21,12 +21,13 @@ import BlogPost from '../components/BlogPost'
 
 const url = 'https://rithwiksai.tech'
 const title = 'Home - Rithwik'
-const description = "Developer and an undergraduate IIIT Bangalore, India."
+const description = "Software developer @ CRED. Previously @ Navi. Grad @ IIIT Bangalore"
+const keywords = "Sai Rithwik, Rithwik, Sai Rithwik M, Madamanchi, Sai Rithwik Madamanchi, Sai Rithwik CRED, Sai Rithwik Navi, Sai Rithwik M CRED, Sai Rithwik M Navi, Sai Rithwik Madhamanchi CRED, Software Developer, IIIT Bangalore"
 const images = [{
     url: '/images/r.png',
     width: 800,
     height: 600,
-    alt: 'Og Image Alt',
+    alt: 'Sai Rithwik',
 }]
 
 export default function Home() {
@@ -39,11 +40,62 @@ export default function Home() {
                 title={title}
                 description={description}
                 canonical={url}
+                keywords={keywords}
                 openGraph={{
                 url,
                 title,
                 description,
-                images
+                images,
+                type: 'website',
+                site_name: 'Sai Rithwik'
+                }}
+                twitter={{
+                handle: '@rithwiksai',
+                cardType: 'summary_large_image',
+                title,
+                description
+                }}
+                additionalMetaTags={[
+                {
+                    name: 'author',
+                    content: 'Sai Rithwik'
+                },
+                {
+                    name: 'keywords',
+                    content: keywords
+                }
+                ]}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Person",
+                        "name": "Sai Rithwik",
+                        "alternateName": ["Sai Rithwik Madamanchi", "Sai Rithwik M", "Rithwik", "Sai Rithwik Madhamanchi"],
+                        "jobTitle": "Software Developer",
+                        "alumniOf": {
+                            "@type": "CollegeOrUniversity",
+                            "name": "IIIT Bangalore"
+                        },
+                        "worksFor": [
+                            {
+                                "@type": "Organization",
+                                "name": "CRED"
+                            },
+                            {
+                                "@type": "Organization",
+                                "name": "Navi"
+                            }
+                        ],
+                        "url": "https://rithwiksai.tech",
+                        "sameAs": [
+                            "https://github.com/rithwiksai",
+                            "https://linkedin.com/in/rithwiksai"
+                        ],
+                        "description": "Software developer @ CRED. Previously @ Navi. Grad @ IIIT Bangalore"
+                    })
                 }}
             />
             <Container>
@@ -84,10 +136,13 @@ export default function Home() {
 						    mb={4}
 						>
 						    I&apos;m a Software Developer at {' '}
+						    <ChakraLink href="https://cred.club" target="_blank" color={linkColor[colorMode]}>CRED
+						    </ChakraLink>
+						    on the Automated Payments team. Previously at {' '}
 						    <ChakraLink href="https://navi.com" target="_blank" color={linkColor[colorMode]}>Navi
 						    </ChakraLink>
-						    , where I build solutions for Debt Recovery teams. Over the past 2 years we devised ways to improve cash collection efficiency, agent productivity, and customer contactability. I am passionate 
-						    about tech, specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering. I love solving ambiguous business and product problems by transforming vague problem statements into simple and actionable solutions.
+						    working with Debt Collections. I am passionate 
+						    about tech, specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering.
 						</chakra.p>
 						<Flex justify={["center", "center", "left"]} width="100%">
 						    <a href="/files/resume.pdf" target="_blank">
