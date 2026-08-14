@@ -137,12 +137,10 @@ export default function Home() {
 						>
 						    I&apos;m a Software Developer at {' '}
 						    <ChakraLink href="https://cred.club" target="_blank" color={linkColor[colorMode]}>CRED
-						    </ChakraLink>
-						    on the Automated Payments team. Previously at {' '}
+						    </ChakraLink> on the Automated Payments team. Previously at {' '}
 						    <ChakraLink href="https://navi.com" target="_blank" color={linkColor[colorMode]}>Navi
-						    </ChakraLink>
-						    working with Debt Collections. I am passionate 
-						    about tech, specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering.
+						    </ChakraLink> working with Debt Collections. I am passionate 
+						    about tech, specifically in the fields of Distributed Computing, Digital Forensics and Reverse Engineering. Absolutely love trekking, running, playing geoguessr and reading about history.
 						</chakra.p>
 						<Flex justify={["center", "center", "left"]} width="100%">
 						    <a href="/files/resume.pdf" target="_blank">

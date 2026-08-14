@@ -27,16 +27,13 @@ const images = [{
 const Interests = {
     like: [
     "Architecture",
-    "Blockchains",
     "Crime Thrillers",
-    "Current Affairs",
+    "Geopolitics",
     "Hip-Hop",
-    "Open Source",
-    "Pizza",
-    "Reddit"],    
+    "History",
+    "🍕 Pizza"],    
     
-    dislike: [
-    "Nachos"]
+    dislike: ["Minimalism", "Nachos", "💔 Rom-Coms"]
 };
 
 
@@ -79,7 +76,7 @@ export default function About() {
                             Me
                         </Heading>
                         <Text mb={12} color={secondaryTextColor[colorMode]}>Hey there!
-                            I&apos;m <strong>Sai Rithwik M</strong>, a Computer Science undergraduate from <ChakraLink href="https://www.iiitb.ac.in" target="_blank" color={linkColor[colorMode]}>IIIT Bangalore</ChakraLink>, India. 
+                            I&apos;m <strong>Sai Rithwik M</strong>, software engg @ <ChakraLink href="https://cred.club" target="_blank" color={linkColor[colorMode]}>CRED</ChakraLink>, India. 
                         </Text>
                         <Heading letterSpacing="tight" mb={2} as="h1" size="lg">
                             Techy techy stuff
