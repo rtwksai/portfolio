@@ -26,14 +26,14 @@ const images = [{
 
 const Interests = {
     like: [
-    "Architecture",
-    "Crime Thrillers",
-    "Geopolitics",
-    "Hip-Hop",
-    "History",
+    "🏛️ Architecture",
+    "🕵🏻‍♂️ Crime Thrillers",
+    "🌍 Geopolitics",
+    "🎵 Hip-Hop",
+    "📜 History",
     "🍕 Pizza"],    
     
-    dislike: ["Minimalism", "Nachos", "💔 Rom-Coms"]
+    dislike: ["〰️ Minimalism", "🌮 Tacos", "💔 Rom-Coms"]
 };
 
 
