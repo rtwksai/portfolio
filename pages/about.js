@@ -33,7 +33,7 @@ const Interests = {
     "📜 History",
     "🍕 Pizza"],    
     
-    dislike: ["〰️ Minimalism", "🌮 Tacos", "💔 Rom-Coms"]
+    dislike: ["〰️ Minimalism", "💔 Rom-Coms", "🌮 Tacos"]
 };
 
 
