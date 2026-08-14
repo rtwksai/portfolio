@@ -12,7 +12,7 @@ import {
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import NextLink from 'next/link';
 
-const url = 'https://rithwiksai.tech'
+const url = 'https://rtwksai.com'
 const title = '404 - Rithwik'
 const description = "Error: Page not found - Rithwik"
 const images = [{

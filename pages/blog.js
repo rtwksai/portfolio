@@ -16,7 +16,7 @@ import BlogPost from '../components/BlogPost'
 import { SearchIcon } from '@chakra-ui/icons'
 import { NextSeo } from 'next-seo'
 
-const url = 'https://rithwiksai.tech/blog'
+const url = 'https://rtwksai.com/blog'
 const title = 'Blog - Rithwik'
 const description = "My blogs! I write about DFIR, blockchains, platforms and probably anything interesting about tech or some small feature that gets my attention."
 const images = [{

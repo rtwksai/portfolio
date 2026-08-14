@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://rithwiksai.tech/sitemap.xml
+Sitemap: https://rtwksai.com/sitemap.xml

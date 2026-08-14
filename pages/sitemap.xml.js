@@ -1,5 +1,5 @@
 export default function Sitemap() {
-  const baseUrl = 'https://rithwiksai.tech'
+  const baseUrl = 'https://rtwksai.com'
   
   const routes = [
     {

@@ -19,7 +19,7 @@ import Container from '../components/Container'
 import ProjectCard from '../components/ProjectCard'
 import BlogPost from '../components/BlogPost'
 
-const url = 'https://rithwiksai.tech'
+const url = 'https://rtwksai.com'
 const title = 'Home - Rithwik'
 const description = "Software developer @ CRED. Previously @ Navi. Grad @ IIIT Bangalore"
 const keywords = "Sai Rithwik, Rithwik, Sai Rithwik M, Madamanchi, Sai Rithwik Madamanchi, Sai Rithwik CRED, Sai Rithwik Navi, Sai Rithwik M CRED, Sai Rithwik M Navi, Sai Rithwik Madhamanchi CRED, Software Developer, IIIT Bangalore"
@@ -89,7 +89,7 @@ export default function Home() {
                                 "name": "Navi"
                             }
                         ],
-                        "url": "https://rithwiksai.tech",
+                        "url": "https://rtwksai.com",
                         "sameAs": [
                             "https://github.com/rithwiksai",
                             "https://linkedin.com/in/rithwiksai"
